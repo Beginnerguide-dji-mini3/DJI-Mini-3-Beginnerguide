@@ -834,6 +834,118 @@
 
 
 
+    <section class="section">
+  <div class="container">
+    <div class="split-layout">
+
+      <!-- Linke Seite: Haupttext -->
+      <div class="content-side">
+        <span class="step-number">Schritt 06</span>
+        <h2>Kalibrierung</h2>
+        <p>Präzise Sensoren sind die Grundlage für sicheres Fliegen.</p>
+
+        <h3>Kompass kalibrieren</h3>
+        <ul>
+          <li>In den App-Einstellungen "Kompass kalibrieren" wählen</li>
+          <li>Drohne horizontal 360° drehen</li>
+          <li>Drohne vertikal 360° drehen (Nase nach unten)</li>
+          <li>Auf Bestätigung warten</li>
+        </ul>
+      </div>
+
+      <!-- Rechte Seite: grauer Infokasten -->
+      <div class="info-side">
+        <div class="info-box">
+          <h4>Wann kalibrieren?</h4>
+          <p>Beim ersten Flug, nach längerer Lagerung oder bei neuem Standort. 
+             Die App fordert dich auf, wenn nötig.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+.section {
+  padding: 40px 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.split-layout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+/* Linke Seite: Text */
+.content-side {
+  flex: 2;
+  min-width: 320px;
+}
+
+.step-number {
+  display: block;
+  font-weight: bold;
+  color: #0077b6;
+  margin-bottom: 10px;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+/* Rechte Seite: grauer Kasten */
+.info-side {
+  flex: 1;
+  min-width: 280px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.info-box {
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  width: 100%;
+}
+
+.info-box h4 {
+  margin-top: 0;
+  color: #333;
+}
+
+/* Responsive Ansicht */
+@media (max-width: 768px) {
+  .split-layout {
+    flex-direction: column;
+  }
+
+  .info-side {
+    order: 2;
+  }
+}
+</style>
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
 
     
     
@@ -841,6 +953,7 @@
 
 </body>
 </html>
+
 
 
 
