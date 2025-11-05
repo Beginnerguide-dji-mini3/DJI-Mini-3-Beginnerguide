@@ -940,6 +940,130 @@ ul {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <section class="section">
+  <div class="container">
+    <div class="split-layout">
+
+      <!-- Textseite -->
+      <div class="content-side">
+        <span class="step-number">Schritt 07</span>
+        <h2>Pre-Flight Check</h2>
+        <p>Sicherheit steht an erster Stelle. Jeden. Einzelnen. Flug.</p>
+
+        <div class="checklist">
+          <div class="checklist-item">
+            <input type="checkbox" id="check1">
+            <label for="check1">Akku vollständig geladen</label>
+          </div>
+          <div class="checklist-item">
+            <input type="checkbox" id="check2">
+            <label for="check2">Propeller fest und unbeschädigt</label>
+          </div>
+          <div class="checklist-item">
+            <input type="checkbox" id="check3">
+            <label for="check3">Gimbal frei beweglich</label>
+          </div>
+          <div class="checklist-item">
+            <input type="checkbox" id="check4">
+            <label for="check4">GPS-Signal stark (10+ Satelliten)</label>
+          </div>
+          <div class="checklist-item">
+            <input type="checkbox" id="check5">
+            <label for="check5">Umgebung sicher</label>
+          </div>
+          <div class="checklist-item">
+            <input type="checkbox" id="check6">
+            <label for="check6">Wetter geeignet</label>
+          </div>
+          <div class="checklist-item">
+            <input type="checkbox" id="check7">
+            <label for="check7">Return-to-Home Point gesetzt</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Video-/Kasten-Seite (Pre-Flight Check) -->
+      <div class="video-side">
+        <div class="video-container">
+          <span class="video-label">Video: Pre-Flight Routine</span>
+          <video controls>
+            <source src="Video_Pre_Flight_Check.mp4" type="video/mp4">
+            Dein Browser unterstützt das Video-Tag nicht.
+          </video>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+/* Gleiche Video-Kasten Eigenschaften wie bei Schritt 2 */
+.video-side {
+  position: sticky;
+  top: 100px;
+  height: 600px; /* gleiche Höhe wie bestehende Video-Kästen */
+  background: #f5f5f7;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+  border: 1px solid #d2d2d7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.video-side:hover {
+  transform: scale(1.02);
+  box-shadow: 0 30px 80px rgba(0,0,0,0.2);
+}
+
+.video-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.video-label {
+  font-size: 1rem;
+  color: #6e6e73;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-align: center;
+}
+
+.video-container video {
+  width: 100%;
+  height: calc(100% - 40px); /* Label + Padding berücksichtigen */
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+</style>
+
+
+
     
 
 
@@ -954,6 +1078,7 @@ ul {
 
 </body>
 </html>
+
 
 
 
