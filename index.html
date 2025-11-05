@@ -599,40 +599,82 @@
 
 
 
+<section class="section">
+    <div class="container">
+        <div class="split-layout">
 
-    <section class="section">
-        <div class="container">
-            <div class="split-layout">
-                <div class="video-side">
-                    <div class="video-placeholder">
-                        <span class="video-label">Video: Akku Installation</span>
-                    </div>
-                </div>
-                <div class="content-side">
-                    <span class="step-number">Schritt 02</span>
-                    <h2>Akku laden</h2>
-                    <p>Ein vollständig geladener Akku ist die Grundlage für deinen ersten Flug.</p>
-                    
-                    <h3>Ladevorgang</h3>
-                    <ul>
-                        <li>Setze den Akku in die Drohne ein</li>
-                        <li>Verbinde das USB-C Kabel mit der Drohne</li>
-                        <li>Ladezeit: circa 90 Minuten</li>
-                        <li>LED-Anzeige informiert über den Status</li>
-                        <li>Verbinde das USB-C Kabel mit deiner Fernsteuerung nachdem die Drohne vollständig geladen ist.</li>
-
-                    </ul>
-
-                    <div class="warning-box">
-                        <h4>Pro Tipp</h4>
-                        <p>Lade die Fernsteuerung parallel zu deiner Drohne, falls du noch ein zweites USB-C Ladekabel besitzt. So bist du für Schritt 3 bereit, wenn beide Akkus geladen sind und ersparst dir eine Menge Zeit.</p>
-                    </div>
+            <!-- Video-Seite -->
+            <div class="video-side">
+                <div class="video-placeholder">
+                    <span class="video-label">Video: Wie lädst du eigentlich deine Drohne?</span>
+                    <video width="100%" height="auto" controls>
+                        <source src="Video_wie_lädt_man_die_drohne.mp4" type="video/mp4">
+                        Dein Browser unterstützt das Video-Tag nicht.
+                    </video>
                 </div>
             </div>
+
+            <!-- Text-Seite -->
+            <div class="content-side">
+                <span class="step-number">Schritt 02</span>
+                <h2>Akku laden</h2>
+                <p>Ein vollständig geladener Akku ist die Grundlage für deinen ersten Flug.</p>
+                
+                <h3>Ladevorgang</h3>
+                <ul>
+                    <li>Setze den Akku in die Drohne ein</li>
+                    <li>Verbinde das USB-C Kabel mit der Drohne</li>
+                    <li>Ladezeit: circa 90 Minuten</li>
+                    <li>LED-Anzeige informiert über den Status</li>
+                    <li>Verbinde das USB-C Kabel mit deiner Fernsteuerung nachdem die Drohne vollständig geladen ist.</li>
+                </ul>
+
+                <div class="warning-box">
+                    <h4>Pro Tipp</h4>
+                    <p>Lade die Fernsteuerung parallel zu deiner Drohne, falls du noch ein zweites USB-C Ladekabel besitzt. So bist du für Schritt 3 bereit, wenn beide Akkus geladen sind und ersparst dir eine Menge Zeit.</p>
+                </div>
+            </div>
+
         </div>
-    </section>
+    </div>
+</section>
 
+<style>
+/* Video-Sektion anpassen */
+.video-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 20px;
+}
 
+/* Video-Label */
+.video-label {
+    font-size: 1rem;
+    color: #6e6e73;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Video selbst */
+.video-placeholder video {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* Kreis und Play-Symbol entfernen */
+.video-placeholder::before,
+.video-placeholder::after {
+    content: none;
+}
+</style>
+
+   
 
 
 
@@ -685,6 +727,7 @@
 
 </body>
 </html>
+
 
 
 
