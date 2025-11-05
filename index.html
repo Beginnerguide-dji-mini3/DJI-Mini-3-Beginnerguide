@@ -724,13 +724,120 @@
 </section>
 
 
+<section class="section">
+    <div class="container">
+        <div class="content-side">
+            <span class="step-number">Schritt 05</span>
+            <h2>Fernsteuerung</h2>
+            <p>Die Verbindung zwischen dir und deiner Drohne.</p>
+
+            <!-- Wichtige Tasten Kasten -->
+            <div class="button-demo" style="width: 100%;">
+                <h3 style="margin-top: 0;">Wichtige Tasten</h3>
+
+                <div class="button-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;">
+
+                    <!-- Einzelner Button mit eigenem Accordion -->
+                    <div class="button-item">
+                        <div class="item-header" style="display:flex; justify-content:space-between; align-items:center; cursor:pointer;">
+                            <div>
+                                <div class="button-name">Power Button</div>
+                                <div class="button-desc">Einmal kurz, dann lang drücken zum Einschalten</div>
+                            </div>
+                            <span class="accordion-toggle" style="font-size: 1.5rem;">&#9654;</span>
+                        </div>
+                        <div class="accordion-content" style="display:none; margin-top:10px;">
+                            <video controls style="width:100%; border-radius:12px;">
+                                <source src="Video_Power_Button.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+
+                    <div class="button-item">
+                        <div class="item-header" style="display:flex; justify-content:space-between; align-items:center; cursor:pointer;">
+                            <div>
+                                <div class="button-name">RTH Button</div>
+                                <div class="button-desc">Return to Home - Automatische Rückkehr (lange Drücken)</div>
+                            </div>
+                            <span class="accordion-toggle" style="font-size: 1.5rem;">&#9654;</span>
+                        </div>
+                        <div class="accordion-content" style="display:none; margin-top:10px;">
+                            <img src="Foto_RTH-Pause_Button.jpeg" alt="RTH Button" style="width:100%; border-radius:12px; margin-bottom:10px;">
+                        </div>
+                    </div>
+
+                    <div class="button-item">
+                        <div class="item-header" style="display:flex; justify-content:space-between; align-items:center; cursor:pointer;">
+                            <div>
+                                <div class="button-name">Pause Button</div>
+                                <div class="button-desc">Stoppt alle Bewegungen sofort (kurz Drücken)</div>
+                            </div>
+                            <span class="accordion-toggle" style="font-size: 1.5rem;">&#9654;</span>
+                        </div>
+                        <div class="accordion-content" style="display:none; margin-top:10px;">
+                            <img src="Foto_RTH-Pause_Button.jpeg" alt="Pause Button" style="width:100%; border-radius:12px; margin-bottom:10px;">
+                        </div>
+                    </div>
+
+                    <div class="button-item">
+                        <div class="item-header" style="display:flex; justify-content:space-between; align-items:center; cursor:pointer;">
+                            <div>
+                                <div class="button-name">Gimbal Wheel</div>
+                                <div class="button-desc">Kamera nach oben/unten neigen                (Auf der Oberseite der Fernbedienung)</div>
+                            </div>
+                            <span class="accordion-toggle" style="font-size: 1.5rem;">&#9654;</span>
+                        </div>
+                        <div class="accordion-content" style="display:none; margin-top:10px;">
+                            <img src="Foto_Gimbal_Wheel.jpeg" alt="Gimbal Wheel" style="width:100%; border-radius:12px; margin-bottom:10px;">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <h3>Verbindung herstellen</h3>
+            <ul>
+                <li>Drohne einschalten</li>
+                <li>Fernsteuerung einschalten</li>
+                <li>Smartphone verbinden</li>
+                <li>DJI Fly App öffnen</li>
+                <li>Aktivierung durchführen</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<script>
+    // Accordion Funktion für jeden Button einzeln
+    document.querySelectorAll('.button-item').forEach(item => {
+        const toggle = item.querySelector('.accordion-toggle');
+        const content = item.querySelector('.accordion-content');
+
+        toggle.addEventListener('click', () => {
+            const isOpen = content.style.display === 'block';
+            content.style.display = isOpen ? 'none' : 'block';
+            toggle.innerHTML = isOpen ? '&#9654;' : '&#9660;'; // Pfeil rechts / unten
+        });
+    });
+</script>
 
 
+
+
+
+
+
+
+
+
+
+    
     
 
 
 </body>
 </html>
+
 
 
 
