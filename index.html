@@ -439,10 +439,6 @@
         <div class="scroll-indicator">↓ Scroll</div>
     </div>
 
-
-
-
-
    <section class="section">
     <div class="container">
         <div class="split-layout">
@@ -837,6 +833,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+<style>
+
+.step-bg-gray {
+    background-color: #ffffff; 
+    padding: 60px 0; 
+    border-radius: 0; 
+}
+</style>
+
+
+
+
 
 
 <section class="section">
@@ -853,6 +861,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     </video>
                 </div>
             </div>
+
 
             <!-- Text-Seite -->
             <div class="content-side">
@@ -882,11 +891,6 @@ document.addEventListener('DOMContentLoaded', () => {
 </section>
 
 <style>
-/* Fix: Hintergrundfarbe für Schritt 4 */
-section.section:nth-of-type(4) {
-    background: #f5f5f7 !important;
-}
-
 /* Video-Kasten identisch zum Auspacken-Video */
 .video-side {
     position: sticky;
@@ -930,7 +934,7 @@ section.section:nth-of-type(4) {
 /* Video füllt den Kasten */
 .video-container video {
     width: 100%;
-    height: calc(100% - 48px);
+    height: calc(100% - 48px); /* Platz für Label / padding */
     object-fit: cover;
     border-radius: 12px;
     display: block;
@@ -938,132 +942,231 @@ section.section:nth-of-type(4) {
 
 /* Kreis und Play-Symbol entfernen, falls vorhanden */
 .video-placeholder::before,
-.video-placeholder::after
+.video-placeholder::after {
+    content: none;
+}
+</style>
 
 
 
 
+<style>
+/* Checkliste & Accordion Styles */
+.checklist-item {
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 5px;
+}
 
+.item-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+}
 
+.item-header input[type="checkbox"] {
+    margin-right: 10px;
+    transform: scale(1.2);
+}
 
+.accordion-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 0;
+}
 
+.accordion-content {
+    display: none;
+    padding: 10px 0 15px 25px;
+}
 
+.accordion-content img {
+    max-width: 100%;
+    border-radius: 8px;
+}
 
+.arrow {
+    transition: transform 0.3s ease;
+    transform-origin: center;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-<section class="section">
-  <div class="container">
-    <div class="content-side">
-      <span class="step-number">Schritt 05</span>
-      <h2>Fernsteuerung</h2>
-      <p>Die Verbindung zwischen dir und deiner Drohne.</p>
-
-      <!-- Wichtige Tasten Kasten -->
-      <div class="button-demo" style="width: 100%;">
-        <h3 style="margin-top: 0;">Wichtige Tasten</h3>
-        <div class="button-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;">
-
-          <!-- Power Button -->
-          <div class="button-item">
-            <div class="item-header" style="display:flex; justify-content:space-between; align-items:center; cursor:pointer;">
-              <div>
-                <div class="button-name">Power Button</div>
-                <div class="button-desc">Einmal kurz, dann lang drücken zum Einschalten</div>
-              </div>
-              <span class="accordion-toggle" style="font-size: 1.5rem;">&#9654;</span>
-            </div>
-            <div class="accordion-content" style="display:none; margin-top:10px;">
-              <video controls style="width:100%; border-radius:12px;">
-                <source src="Video_Power_Button.mp4" type="video/mp4">
-              </video>
-            </div>
-          </div>
-
-          <!-- RTH Button -->
-          <div class="button-item">
-            <div class="item-header" style="display:flex; justify-content:space-between; align-items:center; cursor:pointer;">
-              <div>
-                <div class="button-name">RTH Button</div>
-                <div class="button-desc">Return to Home - Automatische Rückkehr (lange Drücken)</div>
-              </div>
-              <span class="accordion-toggle" style="font-size: 1.5rem;">&#9654;</span>
-            </div>
-            <div class="accordion-content" style="display:none; margin-top:10px;">
-              <img src="Foto_RTH-Pause_Button.jpeg" alt="RTH Button" style="width:100%; border-radius:12px; margin-bottom:10px;">
-            </div>
-          </div>
-
-          <!-- Pause Button -->
-          <div class="button-item">
-            <div class="item-header" style="display:flex; justify-content:space-between; align-items:center; cursor:pointer;">
-              <div>
-                <div class="button-name">Pause Button</div>
-                <div class="button-desc">Stoppt alle Bewegungen sofort (kurz Drücken)</div>
-              </div>
-              <span class="accordion-toggle" style="font-size: 1.5rem;">&#9654;</span>
-            </div>
-            <div class="accordion-content" style="display:none; margin-top:10px;">
-              <img src="Foto_RTH-Pause_Button.jpeg" alt="Pause Button" style="width:100%; border-radius:12px; margin-bottom:10px;">
-            </div>
-          </div>
-
-          <!-- Gimbal Wheel -->
-          <div class="button-item">
-            <div class="item-header" style="display:flex; justify-content:space-between; align-items:center; cursor:pointer;">
-              <div>
-                <div class="button-name">Gimbal Wheel</div>
-                <div class="button-desc">Kamera nach oben/unten neigen (Auf der Rückseite)</div>
-              </div>
-              <span class="accordion-toggle" style="font-size: 1.5rem;">&#9654;</span>
-            </div>
-            <div class="accordion-content" style="display:none; margin-top:10px;">
-              <img src="Foto_Gimbal_Wheel.jpeg" alt="Gimbal Wheel" style="width:100%; border-radius:12px; margin-bottom:10px;">
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <h3>Verbindung herstellen</h3>
-      <ul>
-        <li>Drohne einschalten</li>
-        <li>Fernsteuerung einschalten</li>
-        <li>Smartphone verbinden</li>
-        <li>DJI Fly App öffnen</li>
-        <li>Aktivierung durchführen</li>
-        <li>Die Punkte 3, 4 und 5 müssen nur gemacht werden, falls man nicht die DJI RC Fernbedienung besitzt.</li>
-        <li>Wenn man die RC Fernbedienung besitzt, muss du sie nur anschalten, um dich mit der Drohne zu verbinden.</li>
-      </ul>
-    </div>
-  </div>
-</section>
+/* Pfeil dreht sich bei geöffnetem Accordion */
+.checklist-item.active .arrow {
+    transform: rotate(90deg);
+}
+</style>
 
 <script>
-  // Accordion Funktion für jeden Button einzeln
-  document.querySelectorAll('.button-item').forEach(item => {
-    const toggle = item.querySelector('.accordion-toggle');
-    const content = item.querySelector('.accordion-content');
-
-    toggle.addEventListener('click', () => {
-      const isOpen = content.style.display === 'block';
-      content.style.display = isOpen ? 'none' : 'block';
-      toggle.innerHTML = isOpen ? '&#9654;' : '&#9660;'; // Pfeil rechts / unten
+document.querySelectorAll('.accordion-toggle').forEach(button => {
+    button.addEventListener('click', () => {
+        const item = button.closest('.checklist-item');
+        item.classList.toggle('active');
+        const content = item.querySelector('.accordion-content');
+        if(item.classList.contains('active')) {
+            content.style.display = 'block';
+        } else {
+            content.style.display = 'none';
+        }
     });
-  });
+});
+</script>
+</style>
+
+<section class="section step-bg-gray">
+    <div class="container">
+        <div class="content-side">
+            <span class="step-number">Schritt 05</span>
+            <h2>Fernsteuerung</h2>
+            <p>Die Verbindung zwischen dir und deiner Drohne.</p>
+
+            <!-- Wichtige Tasten Kasten -->
+            <div class="button-demo" style="width: 100%;">
+                <h3 style="margin-top: 0;">Wichtige Tasten</h3>
+
+                <div class="button-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;">
+
+                    <!-- Einzelner Button mit eigenem Accordion -->
+                    <div class="button-item">
+                        <div class="item-header" style="display:flex; justify-content:space-between; align-items:center; cursor:pointer;">
+                            <div>
+                                <div class="button-name">Power Button</div>
+                                <div class="button-desc">Einmal kurz, dann lang drücken zum Einschalten</div>
+                            </div>
+                        </div>
+                        <div class="accordion-content" style="display:none; margin-top:10px;">
+                            <video controls style="width:100%; border-radius:12px;">
+                                <source src="Video_Power_Button.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+
+                    <div class="button-item">
+                        <div class="item-header" style="display:flex; justify-content:space-between; align-items:center; cursor:pointer;">
+                            <div>
+                                <div class="button-name">RTH Button</div>
+                                <div class="button-desc">Return to Home - Automatische Rückkehr (lange Drücken)</div>
+                            </div>
+                        </div>
+                        <div class="accordion-content" style="display:none; margin-top:10px;">
+                            <img src="Foto_RTH-Pause_Button.jpeg" alt="RTH Button" style="width:100%; border-radius:12px; margin-bottom:10px;">
+                        </div>
+                    </div>
+
+                    <div class="button-item">
+                        <div class="item-header" style="display:flex; justify-content:space-between; align-items:center; cursor:pointer;">
+                            <div>
+                                <div class="button-name">Pause Button</div>
+                                <div class="button-desc">Stoppt alle Bewegungen sofort (kurz Drücken)</div>
+                            </div>
+                        </div>
+                        <div class="accordion-content" style="display:none; margin-top:10px;">
+                            <img src="Foto_RTH-Pause_Button.jpeg" alt="Pause Button" style="width:100%; border-radius:12px; margin-bottom:10px;">
+                        </div>
+                    </div>
+
+                    <div class="button-item">
+                        <div class="item-header" style="display:flex; justify-content:space-between; align-items:center; cursor:pointer;">
+                            <div>
+                                <div class="button-name">Gimbal Wheel</div>
+                                <div class="button-desc">Kamera nach oben/unten neigen (Auf der Rückseite)</div>
+                            </div>
+                        </div>
+                        <div class="accordion-content" style="display:none; margin-top:10px;">
+                            <img src="Foto_Gimbal_Wheel.jpeg" alt="Gimbal Wheel" style="width:100%; border-radius:12px; margin-bottom:10px;">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <h3>Verbindung herstellen</h3>
+            <ul>
+                <li>Drohne einschalten</li>
+                <li>Fernsteuerung einschalten</li>
+                <li>Smartphone verbinden</li>
+                <li>DJI Fly App öffnen</li>
+                <li>Aktivierung durchführen</li>
+                <li>Die Punkte 3, 4 und 5 müssen nur gemacht werden, falls man nicht die DJI RC Fernbedienung besitzt.</li>
+                <li>Wenn man die RC Fernbedienung besitzt, muss du sie nur anschalten, um dich mit der Drohne zu verbinden.</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+
+<style>
+.step-bg-gray {
+    background-color: #f5f5f7;
+    padding: 60px 0;
+    border-radius: 0;
+}
+</style>
+
+<script>
+    // Accordion Funktion für jeden Button einzeln
+    document.querySelectorAll('.button-item').forEach(item => {
+        const toggle = item.querySelector('.accordion-toggle');
+        const content = item.querySelector('.accordion-content');
+        if(toggle) {
+            toggle.addEventListener('click', () => {
+                const isOpen = content.style.display === 'block';
+                content.style.display = isOpen ? 'none' : 'block';
+                toggle.innerHTML = isOpen ? '&#9654;' : '&#9660;';
+            });
+        }
+    });
 </script>
 
-<!-- ==================== Schritt 06 ==================== -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+.step-bg-gray {
+    background-color: #f5f5f7;
+    padding: 60px 0;
+    border-radius: 0;
+}
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
 <section class="section kalibrierung-section">
   <div class="kalibrierung-container">
     <div class="kalibrierung-split-layout">
@@ -1100,6 +1203,7 @@ section.section:nth-of-type(4) {
 /* ===============================
    Kalibrierung – einheitlicher Stil
    =============================== */
+
 .kalibrierung-section {
   padding: 60px 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
@@ -1121,10 +1225,12 @@ section.section:nth-of-type(4) {
   align-items: flex-start;
 }
 
-/* Linke Seite */
+/* ===== Linke Seite ===== */
 .kalibrierung-content-side {
   flex: 2;
   min-width: 320px;
+  position: relative;
+  left: -20px; /* 🔥 Verschiebt die Überschrift & Textblock nach links */
 }
 
 .kalibrierung-step-number {
@@ -1134,6 +1240,7 @@ section.section:nth-of-type(4) {
   text-transform: uppercase;
   letter-spacing: 0.05em;
   margin-bottom: 10px;
+
 }
 
 .kalibrierung-content-side h2 {
@@ -1156,7 +1263,7 @@ section.section:nth-of-type(4) {
   color: #6e6e73;
   line-height: 1.8;
   margin-bottom: 20px;
-  letter-spacing: 0.05em;
+   letter-spacing: 0.05em;
 }
 
 .kalibrierung-content-side ul {
@@ -1180,7 +1287,7 @@ section.section:nth-of-type(4) {
   font-weight: 600;
 }
 
-/* Rechte Seite */
+/* ===== Rechte Seite: Infokasten ===== */
 .kalibrierung-info-side {
   flex: 1;
   min-width: 280px;
@@ -1208,14 +1315,18 @@ section.section:nth-of-type(4) {
   font-size: 1rem;
   color: #6e6e73;
   margin: 0;
-  letter-spacing: 0.05em;
+   letter-spacing: 0.05em;
 }
 
-/* Responsive Ansicht */
+/* ===== Responsive Ansicht ===== */
 @media (max-width: 768px) {
   .kalibrierung-split-layout {
     flex-direction: column;
     gap: 40px;
+  }
+
+  .kalibrierung-content-side {
+    left: 0; /* mobile: keine Verschiebung nötig */
   }
 
   .kalibrierung-content-side h2 {
@@ -1246,7 +1357,20 @@ section.section:nth-of-type(4) {
 
 
 
-<section class="section step-07">
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <section class="section">
   <div class="container">
     <div class="split-layout">
 
@@ -1308,7 +1432,7 @@ section.section:nth-of-type(4) {
 .video-side {
   position: sticky;
   top: 100px;
-  height: 600px;
+  height: 600px; /* gleiche Höhe wie bestehende Video-Kästen */
   background: #f5f5f7;
   border-radius: 20px;
   overflow: hidden;
@@ -1347,31 +1471,35 @@ section.section:nth-of-type(4) {
 
 .video-container video {
   width: 100%;
-  height: calc(100% - 40px);
+  height: calc(100% - 40px); /* Label + Padding berücksichtigen */
   object-fit: cover;
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
-
-/* Standard: alle geraden Schritte hellgrau */
-section.section:nth-of-type(even) {
-  background: #f5f5f7 !important;
-}
-
-/* ✅ Fix: Schritt 07 auch hellgrau */
-section.step-07 {
-  background: #f5f5f7 !important;
-}
-
-/* Textformatierungen */
-.kalibrierung-content-side p {
-  font-size: 1.1rem;
-  color: #6e6e73;
-  line-height: 1.8;
-  margin-bottom: 20px;
-  letter-spacing: 0.05em;
-}
 </style>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1407,7 +1535,7 @@ section.step-07 {
             <span class="step-number">Schritt 08</span>
             <h2>Erster Flug</h2>
             <p>Der Moment ist gekommen. Ruhig bleiben. Konzentriert bleiben.</p>
-            <ul><li>🛈 Du siehst durch klicken auf die Kästen ein Video, welches du groß machen kannst, falls du eine Erläuterung der Manöver brauchst.</li></ul>
+            <ul><li>🛈     Du siehst durch klicken auf die Kästen ein Video,welches du groß machen kannst falls du eine Erläuterung der Manöver brauchst. </li></ul>
             
             <div class="button-demo" style="width:100%;">
                 <h3 style="margin-top:0;">Steuerung</h3>
@@ -1419,7 +1547,7 @@ section.step-07 {
                         <div class="button-desc">Hoch/Runter (Throttle)</div>
                         <div class="accordion-content" style="display:none; margin-top:10px;">
                             <video controls style="width:100%; border-radius:12px;" controlsList="fullscreen">
-                                <source src="Lückenfüller" type="video/mp4">
+                                <source src=" Lückenfüller " type="video/mp4">
                                 Dein Browser unterstützt das Video-Tag nicht.
                             </video>
                         </div>
@@ -1431,7 +1559,7 @@ section.step-07 {
                         <div class="button-desc">Rotation (Yaw)</div>
                         <div class="accordion-content" style="display:none; margin-top:10px;">
                             <video controls style="width:100%; border-radius:12px;" controlsList="fullscreen">
-                                <source src="Lückenfüller" type="video/mp4">
+                                <source src="   Lückenfüller   " type="video/mp4">
                                 Dein Browser unterstützt das Video-Tag nicht.
                             </video>
                         </div>
@@ -1443,7 +1571,7 @@ section.step-07 {
                         <div class="button-desc">Vorwärts/Rückwärts</div>
                         <div class="accordion-content" style="display:none; margin-top:10px;">
                             <video controls style="width:100%; border-radius:12px;" controlsList="fullscreen">
-                                <source src="Lückenfüller" type="video/mp4">
+                                <source src="   Lückenfüller   " type="video/mp4">
                                 Dein Browser unterstützt das Video-Tag nicht.
                             </video>
                         </div>
@@ -1455,7 +1583,7 @@ section.step-07 {
                         <div class="button-desc">Links/Rechts</div>
                         <div class="accordion-content" style="display:none; margin-top:10px;">
                             <video controls style="width:100%; border-radius:12px;" controlsList="fullscreen">
-                                <source src="Lückenfüller" type="video/mp4">
+                                <source src="   Lückenfüller   " type="video/mp4">
                                 Dein Browser unterstützt das Video-Tag nicht.
                             </video>
                         </div>
@@ -1474,20 +1602,21 @@ section.step-07 {
 
             <div class="warning-box">
                 <h4>Anfänger-Tipp</h4>
-                <p>Halte die Drohne zunächst in 1–2 Meter Höhe. Übe sanfte Bewegungen. Hektik ist der größte Feind.</p>
+                <p>Halte die Drohne zunächst in 1-2 Meter Höhe. Übe sanfte Bewegungen. Hektik ist der größte Feind.</p>
             </div>
         </div>
     </div>
 </section>
 
 <script>
-document.querySelectorAll('.button-item').forEach(item => {
-    item.addEventListener('click', () => {
-        const content = item.querySelector('.accordion-content');
-        const isOpen = content.style.display === 'block';
-        content.style.display = isOpen ? 'none' : 'block';
+    // Accordion-Funktion für alle Button-Items
+    document.querySelectorAll('.button-item').forEach(item => {
+        item.addEventListener('click', () => {
+            const content = item.querySelector('.accordion-content');
+            const isOpen = content.style.display === 'block';
+            content.style.display = isOpen ? 'none' : 'block';
+        });
     });
-});
 </script>
 
 <style>
@@ -1525,11 +1654,6 @@ document.querySelectorAll('.button-item').forEach(item => {
 .accordion-content video {
     margin-top: 10px;
 }
-
-/* 💡 Hintergrund-Fix für alle geraden Schritte */
-section.section:nth-of-type(even) {
-  background: #f5f5f7 !important;
-}
 </style>
 
 
@@ -1542,6 +1666,18 @@ section.section:nth-of-type(even) {
 
 
 
+
+
+
+
+<style>
+
+.step-bg-gray {
+    background-color: #ffffff; 
+    padding: 60px 0; 
+    border-radius: 0; 
+}
+</style>
 
 
 
@@ -1684,6 +1820,15 @@ section.section:nth-of-type(even) {
 
 
 
+<style>
+
+.step-bg-gray {
+    background-color: #f5f5f7; 
+    padding: 60px 0; 
+    border-radius: 0; 
+}
+</style>
+
 
 
 
@@ -1725,6 +1870,18 @@ section.section:nth-of-type(even) {
 
 
 
+<style>
+
+.step-bg-gray {
+    background-color: #f5f5f7; 
+    padding: 60px 0; 
+    border-radius: 0; 
+}
+</style>
+
+
+
+
 
 
 
@@ -1746,29 +1903,3 @@ section.section:nth-of-type(even) {
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
