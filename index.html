@@ -1015,110 +1015,245 @@ document.querySelectorAll('.accordion-toggle').forEach(button => {
 </script>
 </style>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <section class="section step-bg-gray">
-    <div class="container">
-        <div class="content-side">
-            <span class="step-number">Schritt 05</span>
-            <h2>Fernsteuerung</h2>
-            <p>Die Verbindung zwischen dir und deiner Drohne.</p>
+  <div class="container">
+    <div class="content-side">
+      <span class="step-number">Schritt 05</span>
+      <h2>Fernsteuerung</h2>
+      <p>Die Verbindung zwischen dir und deiner Drohne.</p>
 
-            <!-- Wichtige Tasten Kasten -->
-            <div class="button-demo" style="width: 100%;">
-                <h3 style="margin-top: 0;">Wichtige Tasten</h3>
+      <!-- Wichtige Tasten Kasten -->
+      <div class="button-demo" style="width: 100%;">
+        <h3 style="margin-top: 0;">Wichtige Tasten</h3>
 
-                <div class="button-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;">
-
-                    <!-- Einzelner Button mit eigenem Accordion -->
-                    <div class="button-item">
-                        <div class="item-header" style="display:flex; justify-content:space-between; align-items:center; cursor:pointer;">
-                            <div>
-                                <div class="button-name">Power Button</div>
-                                <div class="button-desc">Einmal kurz, dann lang drücken zum Einschalten</div>
-                            </div>
-                        </div>
-                        <div class="accordion-content" style="display:none; margin-top:10px;">
-                            <video controls style="width:100%; border-radius:12px;">
-                                <source src="Video_Power_Button.mp4" type="video/mp4">
-                            </video>
-                        </div>
-                    </div>
-
-                    <div class="button-item">
-                        <div class="item-header" style="display:flex; justify-content:space-between; align-items:center; cursor:pointer;">
-                            <div>
-                                <div class="button-name">RTH Button</div>
-                                <div class="button-desc">Return to Home - Automatische Rückkehr (lange Drücken)</div>
-                            </div>
-                        </div>
-                        <div class="accordion-content" style="display:none; margin-top:10px;">
-                            <img src="Foto_RTH-Pause_Button.jpeg" alt="RTH Button" style="width:100%; border-radius:12px; margin-bottom:10px;">
-                        </div>
-                    </div>
-
-                    <div class="button-item">
-                        <div class="item-header" style="display:flex; justify-content:space-between; align-items:center; cursor:pointer;">
-                            <div>
-                                <div class="button-name">Pause Button</div>
-                                <div class="button-desc">Stoppt alle Bewegungen sofort (kurz Drücken)</div>
-                            </div>
-                        </div>
-                        <div class="accordion-content" style="display:none; margin-top:10px;">
-                            <img src="Foto_RTH-Pause_Button.jpeg" alt="Pause Button" style="width:100%; border-radius:12px; margin-bottom:10px;">
-                        </div>
-                    </div>
-
-                    <div class="button-item">
-                        <div class="item-header" style="display:flex; justify-content:space-between; align-items:center; cursor:pointer;">
-                            <div>
-                                <div class="button-name">Gimbal Wheel</div>
-                                <div class="button-desc">Kamera nach oben/unten neigen (Auf der Rückseite)</div>
-                            </div>
-                        </div>
-                        <div class="accordion-content" style="display:none; margin-top:10px;">
-                            <img src="Foto_Gimbal_Wheel.jpeg" alt="Gimbal Wheel" style="width:100%; border-radius:12px; margin-bottom:10px;">
-                        </div>
-                    </div>
-
-                </div>
+        <div class="button-grid">
+          <!-- Power Button -->
+          <div class="button-item">
+            <div class="item-header">
+              <div>
+                <div class="button-name">Power Button</div>
+                <div class="button-desc">Einmal kurz, dann lang drücken zum Einschalten</div>
+              </div>
             </div>
+            <div class="accordion-content">
+              <div class="media-wrapper">
+                <video controls class="media-video">
+                  <source src="Video_Power_Button_gedreht.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+          </div>
 
-            <h3>Verbindung herstellen</h3>
-            <ul>
-                <li>Drohne einschalten</li>
-                <li>Fernsteuerung einschalten</li>
-                <li>Smartphone verbinden</li>
-                <li>DJI Fly App öffnen</li>
-                <li>Aktivierung durchführen</li>
-                <li>Die Punkte 3, 4 und 5 müssen nur gemacht werden, falls man nicht die DJI RC Fernbedienung besitzt.</li>
-                <li>Wenn man die RC Fernbedienung besitzt, muss du sie nur anschalten, um dich mit der Drohne zu verbinden.</li>
-            </ul>
+          <!-- RTH Button -->
+          <div class="button-item">
+            <div class="item-header">
+              <div>
+                <div class="button-name">RTH Button</div>
+                <div class="button-desc">Return to Home - Automatische Rückkehr (lange Drücken)</div>
+              </div>
+            </div>
+            <div class="accordion-content">
+              <div class="media-wrapper">
+                <img src="Foto_RTH-Pause_Button.jpeg" alt="RTH Button" class="media-rotate">
+              </div>
+            </div>
+          </div>
+
+          <!-- Pause Button -->
+          <div class="button-item">
+            <div class="item-header">
+              <div>
+                <div class="button-name">Pause Button</div>
+                <div class="button-desc">Stoppt alle Bewegungen sofort (kurz Drücken)</div>
+              </div>
+            </div>
+            <div class="accordion-content">
+              <div class="media-wrapper">
+                <img src="Foto_RTH-Pause_Button.jpeg" alt="Pause Button" class="media-rotate">
+              </div>
+            </div>
+          </div>
+
+          <!-- Gimbal Wheel -->
+          <div class="button-item">
+            <div class="item-header">
+              <div>
+                <div class="button-name">Gimbal Wheel</div>
+                <div class="button-desc">Kamera nach oben/unten neigen (Auf der Rückseite)</div>
+              </div>
+            </div>
+            <div class="accordion-content">
+              <div class="media-wrapper">
+                <img src="Foto_Gimbal_Wheel.jpeg" alt="Gimbal Wheel" class="media-rotate">
+              </div>
+            </div>
+          </div>
         </div>
-    </div>
-</section>
+      </div>
 
+      <h3>Verbindung herstellen</h3>
+      <ul>
+        <li>Drohne einschalten</li>
+        <li>Fernsteuerung einschalten</li>
+        <li>Smartphone verbinden</li>
+        <li>DJI Fly App öffnen</li>
+        <li>Aktivierung durchführen</li>
+        <li>Die Punkte 3, 4 und 5 müssen nur gemacht werden, falls man nicht die DJI RC Fernbedienung besitzt.</li>
+        <li>Wenn man die RC Fernbedienung besitzt, musst du sie nur anschalten, um dich mit der Drohne zu verbinden.</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
 <style>
 .step-bg-gray {
-    background-color: #f5f5f7;
-    padding: 60px 0;
-    border-radius: 0;
+  background-color: #f5f5f7;
+  padding: 60px 0;
+}
+
+/* 1x4-Raster */
+.button-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  justify-items: center;
+  align-items: start;
+}
+
+.button-item {
+  background: white;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 300px;
+}
+
+.item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.accordion-content {
+  display: none;
+  margin-top: 10px;
+}
+
+.accordion-content.show {
+  display: block;
+}
+
+/* Medien-Container */
+.media-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 12px;
+  background-color: #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Gedrehte Bilder */
+.media-rotate {
+  transform: rotate(-90deg);
+  transform-origin: center center;
+  width: auto;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 12px;
+  display: block;
+}
+
+/* Normales Video (nicht gedreht, Controls funktionsfähig) */
+.media-video {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+}
+
+/* Dreh-Button */
+.rotate-btn {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  background: rgba(0,0,0,0.6);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 4px 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s;
+}
+.rotate-btn:hover {
+  background: rgba(0,0,0,0.8);
+}
+
+/* Wenn Video gedreht ist */
+.media-video.rotated {
+  transform: rotate(-90deg);
+  transform-origin: center center;
+  width: auto;
+  height: 100%;
+  object-fit: contain;
 }
 </style>
 
 <script>
-    // Accordion Funktion für jeden Button einzeln
-    document.querySelectorAll('.button-item').forEach(item => {
-        const toggle = item.querySelector('.accordion-toggle');
-        const content = item.querySelector('.accordion-content');
-        if(toggle) {
-            toggle.addEventListener('click', () => {
-                const isOpen = content.style.display === 'block';
-                content.style.display = isOpen ? 'none' : 'block';
-                toggle.innerHTML = isOpen ? '&#9654;' : '&#9660;';
-            });
-        }
+/* Accordion Logik */
+document.querySelectorAll('.button-item').forEach(item => {
+  const header = item.querySelector('.item-header');
+  const content = item.querySelector('.accordion-content');
+
+  header.addEventListener('click', () => {
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.button-item').forEach(i => {
+      i.classList.remove('open');
+      i.querySelector('.accordion-content').classList.remove('show');
     });
+    if (!isOpen) {
+      item.classList.add('open');
+      content.classList.add('show');
+    }
+  });
+});
+
+/* Video-Drehung umschalten */
+document.querySelectorAll('.rotate-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const video = btn.previousElementSibling;
+    video.classList.toggle('rotated');
+  });
+});
 </script>
+
 
 
 
@@ -1903,6 +2038,7 @@ document.querySelectorAll('.accordion-toggle').forEach(button => {
 
 </body>
 </html>
+
 
 
 
